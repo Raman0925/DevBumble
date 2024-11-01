@@ -1,7 +1,15 @@
-const express = require('express');
-const router = express.Router();
-const userController = require('../controller/userController')
+const express = require("express");
+const userRouter = express.Router();
+const {
+  requestReceived,
+  connections,
+  feed,
+} = require("../controller/userController");
+const { userAuth } = require("../middleware/auth");
 
-router.get('/users',userController.getallUsers)
+userRouter.get("/user/requests/received", userAuth, requestReceived);
+userRouter.get("/user/connections", userAuth, connections);
+userRouter.get("/feed", userAuth, feed);
 
-module.exports = router
+
+module.exports = userRouter;
