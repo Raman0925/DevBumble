@@ -7,8 +7,8 @@ const {
 } = require("../controller/userController");
 const { userAuth } = require("../middleware/auth");
 
-userRouter.get("/user/requests/received", userAuth, requestReceived);
-userRouter.get("/user/connections", userAuth, connections);
+userRouter.get("/users/requests/received", userAuth, requestReceived);
+userRouter.get("/users/connections", userAuth, connections);
 userRouter.get("/feed", userAuth, feed);
 
 

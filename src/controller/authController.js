@@ -15,6 +15,8 @@ const signUp = async (req, res) => {
     });
     const savedUser = await newUser.save();
     const token = await savedUser.getJWT();
+    const tokenBearer = "Bearer " + token;
+
     res.cookie("token", token, {
       expires: new Date(Date.now() + 8 * 3600000),
       httpOnly: true,

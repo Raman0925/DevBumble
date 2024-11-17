@@ -21,7 +21,7 @@ const connect = async (uri) => {
 const disconnect = async () => {
   if (isconnected) {
     await mongoose.connection.close();
-    isconnected = true;
+    isconnected = false;
     console.log("Database disconnected successfully");
   }
 };
