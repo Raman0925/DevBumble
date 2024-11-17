@@ -13,11 +13,11 @@ app.use("/requests", requestRoutes);
 app.use("/profile",profileRoutes)
 
 const startServer = async () => {
-  const uri = "mongodb://root:root@localhost:27017/DevBumble?authSource=admin";
+  
 
 
   try {
-    await db.connect(uri); 
+    await db.connect(process.env.DB_URI); 
     app.listen(PORT, () => {
       console.log(`Server is running on http://localhost:${PORT}`);
     });

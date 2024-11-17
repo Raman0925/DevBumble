@@ -6,13 +6,13 @@ const {requestStatus, sendingRequest,} = require('../controller/requestControlle
 
 
 requestRouter.post(
-  "/request/send/:status/:toUserId",
+  "/send/:status/:toUserId",
   userAuth,
  sendingRequest
 );
 
 requestRouter.post(
-  "/request/review/:status/:requestId",
+  "/reviews/:status/:requestId",
   userAuth,
   requestStatus
 );
